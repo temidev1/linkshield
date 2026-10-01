@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="auto">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0f172a" media="(prefers-color-scheme: dark)">
+<title>Phish Detector — Check before you click</title>
+<meta name="description" content="Check any link, message, or email for phishing before you click. Free, simple, safe.">
+<link rel="stylesheet" href="style.css?v=24">
+</head>
+<body>
+
+<button id="theme-toggle" class="theme-toggle" type="button" aria-label="Toggle dark mode">
+  <span class="theme-icon theme-icon-sun">☀️</span>
+  <span class="theme-icon theme-icon-moon">🌙</span>
+</button>
+
+<header class="site-header">
+  <div class="shield">🛡️</div>
+  <h1>Phish Detector</h1>
+  <p class="tagline">Check any link or message before you trust it.</p>
+</header>
+
+<main>
+
+  <section class="input-section">
+    <label for="input" class="input-label">
+      Link or message
+    </label>
+    <textarea
+      id="input"
+      class="big-input"
+      rows="6"
+      placeholder="Paste a suspicious link"
+      autocomplete="off"
+      autocapitalize="off"
+      spellcheck="false"
+    ></textarea>
+
+    <div class="button-row">
+      <button id="check-btn" class="primary-btn" type="button">
+        Analyze
+      </button>
+    </div>
+  </section>
+
+  <section id="loading" class="loading-section hidden">
+    <div class="spinner" aria-hidden="true"></div>
+    <p class="loading-text">Checking...</p>
+    <ul id="loading-steps" class="loading-steps"></ul>
+  </section>
+
+  <section id="result" class="result-section hidden">
+
+    <div id="verdict-banner" class="verdict-banner">
+      <div id="verdict-icon" class="verdict-icon">✅</div>
+      <h2 id="verdict-title" class="verdict-title">THIS IS SAFE</h2>
+      <p id="verdict-subtitle" class="verdict-subtitle">Nothing dangerous was found.</p>
+    </div>
+
+    <div id="verdict-guidance" class="guidance hidden">
+      <h3 class="guidance-title">What to do now</h3>
+      <ul id="guidance-list" class="guidance-list"></ul>
+    </div>
+
+    <div class="details">
+      <h3 class="details-title">What we checked</h3>
+      <ul id="details-list" class="details-list"></ul>
+    </div>
+
+    <div id="reasons-block" class="reasons-block hidden">
+      <h3 class="details-title">Why</h3>
+      <ul id="reasons-list" class="reasons-list"></ul>
+    </div>
+
+    <div class="action-row">
+      <button id="share-btn" class="secondary-btn" type="button">
+        Share
+      </button>
+      <button id="copy-btn" class="secondary-btn" type="button">
+        Copy the reasons
+      </button>
+    </div>
+
+  </section>
+  <section id="error" class="error-section hidden">
+    <div class="error-icon">⚠️</div>
+    <p id="error-text" class="error-text">Something went wrong.</p>
+  </section>
+
+  <section id="about" class="about-section">
+    <h3 class="details-title">What Phish Detector checks</h3>
+    <p>
+      Phish Detector looks for signals commonly associated with phishing and online scams:
+    </p>
+    <ul class="about-list">
+      <li><strong>Website impersonation</strong> — does the URL imitate a legitimate company, bank, or service?</li>
+      <li><strong>Lookalike domains</strong> — does it use character substitutions or deceptive spelling?</li>
+      <li><strong>Suspicious language</strong> — does the message create urgency, fear, or pressure?</li>
+      <li><strong>Sensitive information requests</strong> — does it ask for your BVN, OTP, PIN, password, or card details?</li>
+      <li><strong>Threat intelligence</strong> — does the URL appear in known phishing, malware, or scam databases?</li>
+      <li><strong>Redirects and shortened links</strong> — where possible, does the link hide or redirect to a suspicious destination?</li>
+    </ul>
+
+    <h4 class="details-subtitle">Clear results. Practical guidance.</h4>
+    <p>
+      If Phish Detector identifies suspicious activity, you'll get a clear explanation
+      of the signals it found and guidance on what to do next.
+    </p>
+    <p>
+      If no obvious threat is detected, you'll still get the checks that were performed
+      so you can make an informed decision.
+    </p>
+
+    <p class="about-note">
+      <strong>Privacy-first:</strong> Messages are analyzed on your device. Links may be checked
+      against public threat-intelligence services. Nothing you paste is stored on our servers.
+    </p>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <p>Free · No account required</p>
+  <p class="credit">
+    Built by Maverick ·
+    <a href="https://github.com/temidev1/phish-detector" target="_blank" rel="noopener">
+      github.com/temidev1/phish-detector
+    </a>
+  </p>
+</footer>
+
+<script src="data/brands.js?v=24"></script>
+<script src="data/ng-banks.js?v=24"></script>
+<script src="data/ng-telcos.js?v=24"></script>
+<script src="data/ng-agencies.js?v=24"></script>
+<script src="data/smishing-keywords.js?v=24"></script>
+<script src="data/pidgin-keywords.js?v=24"></script>
+<script src="data/suspicious-tlds.js?v=24"></script>
+<script src="data/shorteners.js?v=24"></script>
+<script src="data/suspicious-hosts.js?v=24"></script>
+
+<script src="lib/psl.js?v=24"></script>
+<script src="lib/url.js?v=24"></script>
+<script src="lib/smishing.js?v=24"></script>
+<script src="lib/email.js?v=24"></script>
+<script src="lib/report.js?v=24"></script>
+
+<script src="app.js?v=24"></script>
+
+</body>
+</html>

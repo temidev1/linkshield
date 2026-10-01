@@ -1,0 +1,8 @@
+// Nigerian telecom companies
+window.NG_TELCOS = [
+  "mtn", "mtn nigeria", "glo", "globacom", "glo mobile",
+  "airtel", "airtel nigeria", "9mobile", "etisalat",
+  "smile", "smile communications", "spectranet", "ipnx",
+  "swift", "swift networks", "ntel", "visafone",
+  "multi-links", "t2", "t2 mobile", "opalnet", "cobranet"
+];

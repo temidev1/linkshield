@@ -1,0 +1,10 @@
+dev-server.py
+api/
+*.pyc
+__pycache__/
+.DS_Store
+dev-server.py
+api/
+.git/
+__pycache__/
+*.pyc

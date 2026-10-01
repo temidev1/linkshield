@@ -1,0 +1,22 @@
+# Netlify config — tells Netlify where static files live and where functions live
+[build]
+  publish = "."
+  functions = "netlify/functions"
+
+# Route /api/* to functions
+[[redirects]]
+  from = "/api/reputation"
+  to = "/.netlify/functions/reputation"
+  status = 200
+
+[[redirects]]
+  from = "/api/expand"
+  to = "/.netlify/functions/expand"
+  status = 200
+
+# Lock down everything else
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "no-referrer"
