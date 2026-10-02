@@ -30,12 +30,23 @@ Paste any suspicious link, SMS, or WhatsApp message. LinkShield checks it agains
 ## Deploy your own
 
 1. Clone this repo
-2. Zip the contents (excluding `dev-server.py`)
+2. Zip the folder contents
 3. Drop the zip at https://app.netlify.com/drop
 4. Add these environment variables in Netlify:
    - `PHISHDETECT_GSB_KEY`
    - `PHISHDETECT_VT_KEY`
    - `PHISHDETECT_ABUSECH_KEY`
+  
+## Local development
+
+The frontend runs entirely client-side. To test locally:
+
+    python3 -m http.server 8080
+
+Then open http://localhost:8080.
+
+Note: the `/api/reputation` and `/api/expand` endpoints only work when deployed to Netlify. Locally, reputation checks will show "services unavailable" — but URL parsing, keyword scanning, and verdict scoring all work.
+
 
 ## Privacy
 
